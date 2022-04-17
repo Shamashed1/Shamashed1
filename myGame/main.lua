@@ -30,7 +30,7 @@ function love.load()
     player.animations.right = anim8.newAnimation(player.grid('1-4', 3), 0.2)
     player.animations.up = anim8.newAnimation(player.grid('1-4', 4), 0.2)
 
-    --player.anim = player.animations.left
+    player.anim = player.animations.left
 
     background = love.graphics.newImage('sprites/background.png')
 
