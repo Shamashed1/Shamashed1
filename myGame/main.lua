@@ -12,7 +12,7 @@ function love.load()
     love.graphics.setDefaultFilter("nearest", "nearest")
 
     sti = require 'libraries/sti'
-    gameMap = sti('maps/testmap..lua')
+    gameMap = sti('maps/startmap..lua')
 
     player = {}
     player.collider = world:newBSGRectangleCollider(400, 250, 50, 100, 10)
@@ -62,8 +62,8 @@ function love.update(dt)
         volume = 0
     end
 
-    if volume > 0.2 then
-        volume = 0.2
+    if volume > 0.25 then
+        volume = 0.25
     end
 
     if love.keyboard.isDown("right") then
