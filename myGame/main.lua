@@ -90,6 +90,10 @@ function love.update(dt)
     isMoving = true
     end
 
+    if isMoving == false then
+        player.anim:gotoFrame(2)
+    end
+
     player.collider:setLinearVelocity(vx, vy)
 
     sounds.backroundmusic:setVolume(volume)
