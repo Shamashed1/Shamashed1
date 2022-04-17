@@ -1,6 +1,6 @@
 function love.load()
 
-    volume=0.075
+    volume=0.070
 
     wf = require 'libraries/windfield'
     world = wf.newWorld (0, 0)
@@ -56,7 +56,15 @@ function love.update(dt)
     local vy = 0
     local vx = 0
 
-    --print(volume)
+   -- print(volume)
+
+    if volume < 0 then
+        volume = 0
+    end
+
+    if volume > 0.2 then
+        volume = 0.2
+    end
 
     if love.keyboard.isDown("right") then
     vx = player.speed
@@ -141,12 +149,12 @@ function love.keypressed(key)
     end
 
     if key == "v" then
-        volume = volume - 0.005
+        volume = volume - 0.01
     end
     
     if key == "b" then
         print("increae")
-        volume = volume + 0.005
+        volume = volume + 0.01
     end
     
 end
